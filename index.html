@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Casa de Eventos</title>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body>
+
+  <!-- 🧭 TOPO / MENU -->
+ <header class="topo">
+  <div class="logo">CASA DE EVENTOS</div>
+  <nav>
+    <ul class="menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#orcamento">Orçamento</a></li>
+      <li><a href="#informacoes">Informações</a></li>
+      <li><a href="https://wa.me/5588981337335" target="_blank">Contato</a></li>
+      <li><a href="#avaliacoes">Avaliações</a></li>
+      <!-- No seu menu, adicione: -->
+       <li><a href="servicos.html">Serviços</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <!-- 🎆 BANNER INICIAL -->
+  <section class="banner" id="home">
+  <div class="carrossel">
+    <img class="carrossel-img ativo" src="assets/img/cas1.jpg" alt="Imagem 1">
+    <img class="carrossel-img" src="assets/img/cas2.jpg" alt="Imagem 2">
+    <img class="carrossel-img" src="assets/img/form1.jpg" alt="Imagem 3">
+    <img class="carrossel-img" src="assets/img/inf1.jpg" alt="Imagem 4">
+  </div>
+  <div class="overlay">
+    <h1 id="typed-title">Realize seu sonho com elegancia</h1>
+    <p>Eventos completos e personalizados para tornar seu momento inesquecível.</p>
+  </div>
+</section>
+
+<!-- Adicione após o banner ou onde desejar -->
+<section class="info-random">
+  <div class="info-bloco">
+    <img src="assets/img/cas1.jpg" alt="Imagem esquerda" class="info-img esquerda">
+    <div class="info-textos">
+      <h2>Ambiente Sofisticado</h2>
+      <p>Espaço climatizado, decoração elegante e iluminação personalizada para seu evento ser inesquecível.</p>
+    </div>
+    <img src="assets/img/cas2.jpg" alt="Imagem direita" class="info-img direita">
+  </div>
+  <div class="info-bloco">
+    <img src="assets/img/form1.jpg" alt="Imagem esquerda" class="info-img esquerda">
+    <div class="info-textos">
+      <h2>Equipe Especializada</h2>
+      <p>Profissionais prontos para atender todas as necessidades do seu evento, do início ao fim.</p>
+    </div>
+    <img src="assets/img/inf1.jpg" alt="Imagem direita" class="info-img direita">
+  </div>
+</section>
+  <!-- 💬 WHATSAPP FLOAT -->
+  <a class="whatsapp-float" href="https://wa.me/5588981337335" target="_blank">
+    <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png" alt="WhatsApp"/>
+  </a>
+<script>
+// filepath: c:\Users\vinic\OneDrive\Área de Trabalho\Site Casa de Show\index.html
+let slideIndex = 0;
+const slides = document.querySelectorAll('.carrossel-img');
+
+function showSlide(n) {
+  slides.forEach((img, i) => {
+    img.classList.toggle('ativo', i === n);
+  });
+}
+
+function nextSlide() {
+  slideIndex = (slideIndex + 1) % slides.length;
+  showSlide(slideIndex);
+}
+
+// Troca automática a cada 4 segundos
+setInterval(nextSlide, 4000);
+
+// Mostra o primeiro slide ao carregar
+showSlide(slideIndex);
+</script>
+
+
+<section class="servicos-home" id="servicos">
+  <h2>Nossos Serviços</h2>
+  <div class="servicos-lista">
+    <div class="servico-card">
+      <img src="assets/img/servico1.jpg" alt="Buffet Completo">
+      <h3>Buffet Completo</h3>
+      <p>Cardápios variados para todos os tipos de eventos.</p>
+    </div>
+    <div class="servico-card">
+      <img src="assets/img/servico2.jpg" alt="Decoração Personalizada">
+      <h3>Decoração Personalizada</h3>
+      <p>Ambientes decorados conforme o seu sonho.</p>
+    </div>
+    <div class="servico-card">
+      <img src="assets/img/servico3.jpg" alt="Som e Iluminação">
+      <h3>Som e Iluminação</h3>
+      <p>Tecnologia de ponta para tornar seu evento inesquecível.</p>
+    </div>
+  </div>
+  <a class="btn-servicos" href="servicos.html">Ver todos os serviços</a>
+</section>
+
+
+<!-- Adicione antes do </body> -->
+<footer class="rodape">
+  <div class="rodape-conteudo">
+    <span>&copy; 2025 Casa de Eventos. Todos os direitos reservados.</span>
+    <div class="rodape-redes">
+      <a href="https://www.instagram.com/" target="_blank" title="Instagram">
+        <img src="https://img.icons8.com/ios-filled/30/800020/instagram-new.png" alt="Instagram"/>
+      </a>
+      <a href="https://www.facebook.com/" target="_blank" title="Facebook">
+        <img src="https://img.icons8.com/ios-filled/30/800020/facebook-new.png" alt="Facebook"/>
+      </a>
+      <a href="https://wa.me/5588981337335" target="_blank" title="WhatsApp">
+        <img src="https://img.icons8.com/ios-filled/30/800020/whatsapp--v1.png" alt="WhatsApp"/>
+      </a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,355 @@
+/* Reset e fonte */
+body {
+  background: #000;
+  color: #fff; /* Opcional: deixa o texto branco para melhor contraste */
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Estilização da NAVBAR */
+.topo {
+  background: #000;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #800020; /* linha vinho */
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.menu {
+  list-style: none;        /* remove as bolinhas */
+  display: flex;           /* deixa os itens em linha */
+  gap: 25px;               /* espaço entre itens */
+  margin: 0;
+  padding: 0;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  padding: 6px 12px;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.menu li a:hover {
+  border-color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.menu li a {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.3s;
+}
+
+.menu li a::after {
+  content: "";
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%;
+  height: 100%;
+  background: #800020; /* cor vinho */
+  z-index: -1;
+  border-radius: 50px; /* deixa o efeito mais líquido */
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1.2s cubic-bezier(.22,1,.36,1); /* mais lento e suave */
+}
+
+.menu li a:active::after {
+  transform: scaleX(1);
+}
+
+.menu li a:active {
+  color: #fff;
+}
+.banner {
+  position: relative;
+  width: 100vw;      /* ocupa toda a largura da tela */
+  height: 100vh;     /* ocupa toda a altura da tela */
+  min-height: 450px; /* altura mínima para desktop */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;  /* cor de fundo para as faixas */
+}
+
+.carrossel {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.carrossel-img {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* mostra a imagem inteira, sem cortes */
+  background: #000;    /* cor de fundo para as faixas */
+  position: absolute;
+  top: 0; left: 0;
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+
+.carrossel-img.ativo {
+  display: block;
+  opacity: 1;
+  z-index: 2;
+}
+.carrossel-btn.prev { left: 50px; }
+.carrossel-btn.next { right: 50px; }
+
+.overlay {
+  position: relative;
+  z-index: 4;
+  background: rgba(0,0,0,0.5);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+.overlay h1 {
+  font-size: 36px;
+  color: #fff;
+}
+.overlay p {
+  font-size: 18px;
+  color: #ccc;
+}
+.info-random {
+  width: 100%;
+  padding: 60px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  background: #111;
+}
+
+.info-bloco {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  width: 80%;
+  max-width: 1100px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 20px;
+  padding: 30px 20px;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.08);
+}
+
+.info-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.12);
+}
+
+.info-textos {
+  flex: 1;
+  text-align: center;
+}
+
+.info-textos h2 {
+  color: #800020;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.info-textos p {
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+/* WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  padding: 10px;
+  border-radius: 50%;
+}
+.whatsapp-float img {
+  width: 30px;
+  height: 30px;
+}
+
+.servicos-home {
+  padding: 60px 0 40px 0;
+  background: #181818;
+  text-align: center;
+}
+.servicos-home h2 {
+  color: #800020;
+  font-size: 2.2rem;
+  margin-bottom: 32px;
+}
+.servicos-lista {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+.servico-card {
+  background: #222;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px #80002022;
+  padding: 24px 18px;
+  width: 260px;
+  color: #fff;
+  transition: transform 0.3s;
+}
+.servico-card:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 8px 32px #80002055;
+}
+.servico-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 14px;
+}
+.servico-card h3 {
+  color: #800020;
+  margin-bottom: 8px;
+}
+.btn-servicos {
+  display: inline-block;
+  background: #800020;
+  color: #fff;
+  padding: 12px 32px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+.btn-servicos:hover {
+  background: #a8324a;
+}
+
+.rodape {
+  width: 100%;
+  background: #1a1a1a;
+  border-top: 4px solid #800020;
+  padding: 30px 0 15px 0;
+  color: #fff;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.rodape-conteudo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.rodape-redes {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+}
+
+.rodape-redes img {
+  width: 30px;
+  height: 30px;
+  filter: drop-shadow(0 2px 6px #80002055);
+  transition: transform 0.3s;
+}
+
+.rodape-redes img:hover {
+  transform: scale(1.18) rotate(-8deg);
+  filter: drop-shadow(0 4px 12px #800020aa);
+}
+
+
+
+
+
+.agendamento {
+  background: #181818;
+  padding: 50px 0 60px 0;
+  text-align: center;
+  margin-top: 40px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 2px 16px #80002022;
+}
+
+.agendamento h2 {
+  color: #800020;
+  margin-bottom: 18px;
+}
+
+.calendario-agenda {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.calendario-agenda input[type="date"] {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 1px solid #800020;
+  background: #222;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.botoes-agenda {
+  display: flex;
+  gap: 18px;
+}
+
+.btn-agendar, .btn-disponibilidade {
+  background: #800020;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 28px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-agendar:hover, .btn-disponibilidade:hover {
+  background: #a8324a;
+}
+
+#mensagem-agenda {
+  margin-top: 16px;
+  color: #fff;
+  font-size: 1.1rem;
+}
